@@ -1,0 +1,170 @@
+{
+  "title": "Leo's train adventure to the doctor",
+  "label": "Blood test",
+  "kidName": "Leo",
+  "age": "3-5",
+  "lang": "en",
+  "friend": {
+    "key": "train",
+    "name": "Choo the Train",
+    "look": "a cute toy train with a big smile and a blue body",
+    "theme": "Trains"
+  },
+  "plan": [
+    {
+      "id": "needle",
+      "label": "Needles or shots",
+      "helps": [
+        "sit up on the grown-up's lap in a comfort hug instead of lying down",
+        "look at a video, bubbles, or a toy during the poke",
+        "pick which arm",
+        "take slow balloon breaths",
+        "know it hurts for about 2 seconds, then it is over"
+      ],
+      "ask": [
+        "numbing cream about an hour before",
+        "a cold or vibrating device on the arm (like Buzzy)",
+        "doing it sitting up, in a comfort hold",
+        "counting down \"3, 2, 1\" only if the child likes that"
+      ],
+      "src": "HELPinKIDS clinical guideline (CMAJ 2015); AAP HealthyChildren.org"
+    },
+    {
+      "id": "away",
+      "label": "Being away from me",
+      "helps": [
+        "the grown-up stays in the room",
+        "hold something of the grown-up's",
+        "know when the grown-up will be back, with a picture"
+      ],
+      "ask": [
+        "staying with the child the whole time",
+        "being there when anesthesia starts and when the child wakes up"
+      ],
+      "src": "AAP family-centered care guidance"
+    }
+  ],
+  "pages": [
+    {
+      "text": "I go to the clinic. I see trains outside.",
+      "say": "Hmm... hello, Leo! It's me, Choo the Train! [excited] Today... the doctor! You and me. Here we go!",
+      "scene": "A smiling receptionist behind a bright clinic front desk greets the child and their grown-up, with Choo the Train beside them.",
+      "picture": "clinic",
+      "sound": "",
+      "media": {
+        "image": "p1.jpg",
+        "voice": "p1.mp3"
+      }
+    },
+    {
+      "text": "I wait. I have my blue blanket.",
+      "say": "Ooooh! Look, Leo! The blue blanket. The soft blue blanket! Can you hold it?",
+      "scene": "The child sits with their grown-up in a waiting room, holding the blue blanket, and Choo the Train is on their lap.",
+      "picture": "wait",
+      "sound": "",
+      "media": {
+        "image": "p2.jpg",
+        "voice": "p2.mp3"
+      }
+    },
+    {
+      "text": "I sit in a chair. It has an armrest.",
+      "say": "Ahhh! What is that? The chair. The big chair! It goes up... up... up! Can you see it?",
+      "scene": "The child sits in a big chair with an armrest, and Choo the Train is beside them, also sitting in a tiny chair.",
+      "picture": "chair",
+      "sound": "",
+      "media": {
+        "image": "p3.jpg",
+        "voice": "p3.mp3"
+      }
+    },
+    {
+      "text": "A band goes on my arm. It feels tight.",
+      "say": "Oh my! Look! The band. The stretchy band! Can you feel it?",
+      "scene": "A nurse puts a stretchy band on the child's arm, while the child holds their blue blanket and Choo the Train looks on.",
+      "picture": "arm",
+      "sound": "",
+      "media": {
+        "image": "p4.jpg",
+        "voice": "p4.mp3"
+      }
+    },
+    {
+      "text": "I feel worried. My grown-up is here.",
+      "say": "Psst... Leo. It is OK to feel worried. I am here. Your grown-up is here.",
+      "scene": "The child looks worried, holding their blue blanket, and Choo the Train gives a reassuring look, while the grown-up comforts them.",
+      "picture": "feelings",
+      "sound": "",
+      "media": {
+        "image": "p5.jpg",
+        "voice": "p5.mp3"
+      }
+    },
+    {
+      "text": "The nurse shows me a needle. It is small.",
+      "say": "Hmm... what do I see? The needle. The little needle! Can you see it?",
+      "scene": "The nurse shows the child a needle, while the child holds their blue blanket and Choo the Train looks on.",
+      "picture": "needle",
+      "sound": "",
+      "media": {
+        "image": "p6.jpg",
+        "voice": "p6.mp3"
+      }
+    },
+    {
+      "text": "The needle hurts. For 2 seconds.",
+      "say": "Psst... Leo. Now the poke. A sharp poke. It hurts for 2 seconds. One... two... done! I'm right here. Squeeze your grown-up's hand.",
+      "scene": "The nurse gives the child a shot, while the child sits on the grown-up's lap, holding the blue blanket, and Choo the Train is beside them.",
+      "picture": "needle",
+      "sound": "",
+      "media": {
+        "image": "p7.jpg",
+        "voice": "p7.mp3"
+      }
+    },
+    {
+      "text": "Tubes fill up. It takes a minute.",
+      "say": "Ooooh! Look! The tubes. The little tubes! Can you see them fill up?",
+      "scene": "The child watches as small tubes fill up with blood, while holding their blue blanket and Choo the Train looks on.",
+      "picture": "arm",
+      "sound": "Glug glug",
+      "media": {
+        "image": "p8.jpg",
+        "voice": "p8.mp3"
+      }
+    },
+    {
+      "text": "I get a bandage. It is sticky.",
+      "say": "Ahhh! What is that? The bandage. The sticky bandage! Can you feel it?",
+      "scene": "The nurse puts a bandage on the child's arm, while the child holds their blue blanket and Choo the Train looks on.",
+      "picture": "bandage",
+      "sound": "",
+      "media": {
+        "image": "p9.jpg",
+        "voice": "p9.mp3"
+      }
+    },
+    {
+      "text": "The visit is over. I can play trains.",
+      "say": "Hmm... all done! Now we play trains! Choo choo! Can you make train sounds?",
+      "scene": "The child plays with toy trains, with Choo the Train beside them, and the grown-up smiles.",
+      "picture": "friend",
+      "sound": "Choo choo",
+      "media": {
+        "image": "p10.jpg",
+        "voice": "p10.mp3"
+      }
+    },
+    {
+      "text": "I go home. I am happy.",
+      "say": "Ooooh! Look, Leo! We're going home! You and me. Here we go! [excited]",
+      "scene": "The child and their grown-up leave the clinic, with Choo the Train beside them, and the child holds their blue blanket.",
+      "picture": "home",
+      "sound": "",
+      "media": {
+        "image": "p11.jpg",
+        "voice": "p11.mp3"
+      }
+    }
+  ]
+}

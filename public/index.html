@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VisitBridge</title>
+  <meta name="description" content="Help your autistic child get through doctor and dentist visits. An animated story for the exact visit, told by a friend from their favorite thing.">
+  <meta name="theme-color" content="#4f46e5">
+  <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/nunito.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/app.css">
+  <script type="module" src="/js/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main" id="skip">Skip to main content</a>
+  <div class="sky" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+  <header class="top">
+    <a href="#home" class="brand">
+      <img src="/img/icon.svg" alt="" width="34" height="34">
+      <span>VisitBridge</span>
+    </a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="#story">Story</a>
+      <a href="#child">My child</a>
+    </nav>
+    <button type="button" class="btn-plain btn-small" id="display-btn" aria-expanded="false" aria-controls="display">Display</button>
+  </header>
+
+  <div id="display" class="display" hidden>
+    <fieldset>
+      <legend>Text size</legend>
+      <label><input type="radio" name="size" value="normal" checked> Normal</label>
+      <label><input type="radio" name="size" value="large"> Large</label>
+      <label><input type="radio" name="size" value="xlarge"> Extra large</label>
+    </fieldset>
+    <fieldset>
+      <legend>Look</legend>
+      <label><input type="checkbox" id="opt-contrast"> High contrast</label>
+      <label><input type="checkbox" id="opt-dark"> Dark (less light)</label>
+      <label><input type="checkbox" id="opt-spacing"> More space between lines</label>
+      <label><input type="checkbox" id="opt-motion"> No movement</label>
+    </fieldset>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <section data-view="home" data-title="">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">For parents of autistic kids</p>
+          <h1 tabindex="-1">No more scary surprises at the doctor.</h1>
+          <p class="lead">A check-up is full of surprises: strangers, loud rooms, a cuff that squeezes, something cold in their ear. VisitBridge makes an animated story of the exact visit, told out loud by a friend from your child's favorite thing. They watch it at home, so on the day, nothing is new.</p>
+          <div class="actions">
+            <a class="btn btn-big" href="#story">✨ Make a visit story</a>
+            <a class="btn-plain" href="#story" id="watch-demo" hidden>▶ Watch a demo</a>
+          </div>
+          <p id="child-nudge" class="nudge" hidden>First time? Tell us <a href="#child">about your child</a>. It takes 1 minute and stays on this phone.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-frame">
+            <img src="/img/hero.jpg" alt="">
+            <div class="hero-bubble"><img src="/img/3d/tractor.png" alt=""><span>"Ooh, Leo! It's me, Mo the Mower! Today we're going to the doctor together."</span></div>
+          </div>
+          <img class="float f1" src="/img/3d/tooth.png" alt="">
+          <img class="float f2" src="/img/3d/comfort.png" alt="">
+          <img class="float f3" src="/img/3d/stethoscope.png" alt="">
+          <img class="float f4" src="/img/3d/dinosaur.png" alt="">
+        </div>
+      </div>
+
+      <ol class="tiles">
+        <li><a class="tile" href="#child"><img src="/img/3d/comfort.png" alt=""><span class="tile-step">Step 1</span><strong>About your child</strong><span>Favorite thing, comfort item, what's hard, what helps.</span></a></li>
+        <li><a class="tile tile-main" href="#story"><img src="/img/3d/book.png" alt=""><span class="tile-step">Days before</span><strong>Visit story</strong><span>An animated, narrated story of this exact visit. Watch it together each day.</span></a></li>      </ol>
+    </section>
+
+    <section data-view="child" data-title="About your child" hidden>
+      <h1 tabindex="-1">About your child</h1>
+      <p class="lead">Saved only on this phone. Your child's name is never sent to the story AI.</p>
+      <form id="kid-form" class="builder">
+        <fieldset class="step">
+          <legend><span class="step-n">1</span> The basics</legend>
+          <div class="row">
+            <label class="field">
+              <span>First name</span>
+              <input type="text" name="name" maxlength="40" autocomplete="off" placeholder="Leo">
+            </label>
+            <div class="field">
+              <span id="age-label">Age</span>
+              <div class="seg" role="radiogroup" aria-labelledby="age-label">
+                <label><input type="radio" name="age" value="3-5"><span>3 to 5</span></label>
+                <label><input type="radio" name="age" value="6-8" checked><span>6 to 8</span></label>
+                <label><input type="radio" name="age" value="9-12"><span>9 to 12</span></label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <label class="field">
+              <span>Favorite thing</span>
+              <input type="text" name="favorite" maxlength="60" placeholder="Lawn mowers, trains, dinosaurs...">
+            </label>
+            <label class="field">
+              <span>Comfort item</span>
+              <input type="text" name="comfort" maxlength="60" placeholder="Blue blanket, stuffed bunny...">
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend><span class="step-n">2</span> How should we draw them?</legend>
+          <p class="hint">So the child in the pictures looks like them. Only these choices are used, never a photo.</p>
+          <div class="look">
+            <div class="field">
+              <span id="style-label">Picture style</span>
+              <div class="seg" role="radiogroup" aria-labelledby="style-label">
+                <label><input type="radio" name="style" value="real" checked><span>📷 Real life</span></label>
+                <label><input type="radio" name="style" value="movie"><span>🎬 Animated movie</span></label>
+              </div>
+            </div>
+            <div class="field">
+              <span id="skin-label">Skin</span>
+              <div class="swatches" role="radiogroup" aria-labelledby="skin-label" data-look="skin"></div>
+            </div>
+            <div class="field">
+              <span id="hair-label">Hair</span>
+              <div class="seg seg-wrap" role="radiogroup" aria-labelledby="hair-label" data-look="hair"></div>
+            </div>
+            <div class="field">
+              <span id="hcolor-label">Hair color</span>
+              <div class="swatches" role="radiogroup" aria-labelledby="hcolor-label" data-look="hairColor"></div>
+            </div>
+            <label class="toggle"><input type="checkbox" name="glasses"><span>👓 Wears glasses</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend><span class="step-n">3</span> What is hard for them?</legend>
+          <div class="toggles" data-kid-list="sensory"></div>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend><span class="step-n">4</span> What helps?</legend>
+          <div class="toggles toggles-wide" data-kid-list="tips"></div>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend><span class="step-n">5</span> Whose voice tells the story?</legend>
+          <p class="hint">Kids often listen best to a voice they love. Record yours, and the story friend talks in it.</p>
+          <div data-voice></div>
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-big">Save</button>
+          <button type="button" class="btn-plain danger" id="kid-clear">Delete everything</button>
+        </div>
+        <p class="status" role="status" id="kid-status"></p>
+      </form>
+    </section>
+
+    <section data-view="story" data-title="Visit story" hidden>
+      <h1 tabindex="-1">Make a story</h1>
+      <p class="lead">A few taps. Then watch it together a few times before the day.</p>
+      <section class="demos no-print" id="demo-list" hidden></section>
+      <form id="story-form" class="builder no-print">
+        <fieldset class="step">
+          <legend><span class="step-n">1</span> What is the story about?</legend>
+          <h3 class="group-title">Doctor and dentist</h3>
+          <div class="pick-grid" id="visit-tiles"></div>
+          <h3 class="group-title">Daily routines</h3>
+          <div class="pick-grid" id="routine-tiles"></div>
+          <label class="field more-field">
+            <span>Or pick from more</span>
+            <select name="visitMore" id="visit-more"></select>
+          </label>
+          <label class="field" hidden data-other>
+            <span>Describe it</span>
+            <input type="text" name="otherType" maxlength="120" placeholder="Example: going to the dentist for a filling">
+          </label>
+        </fieldset>
+        <fieldset class="step">
+          <legend><span class="step-n">2</span> What scares them most?</legend>
+          <p class="hint">Pick any. The story gives your child a plan for that moment, using ways known to help. You also get a checklist of what to ask the staff.</p>
+          <div class="toggles" id="fear-tiles"></div>
+          <label class="field">
+            <span>Something else? Say it in your words</span>
+            <input type="text" name="fearText" maxlength="200" placeholder="Example: he screams when they put the mask on his face">
+          </label>
+        </fieldset>
+        <fieldset class="step">
+          <legend><span class="step-n">3</span> Who tells the story?</legend>
+          <p class="hint">Pick your child's favorite thing. A friend from it comes along and tells the story. The visit itself stays real.</p>
+          <div class="pick-grid pick-grid-small" id="friend-tiles"></div>
+          <label class="field" hidden data-theme-other>
+            <span>Their favorite thing</span>
+            <input type="text" name="themeOther" maxlength="60" placeholder="Example: washing machines">
+          </label>
+        </fieldset>
+        <fieldset class="step">
+          <legend><span class="step-n">4</span> Which language?</legend>
+          <div class="seg seg-wrap lang-row" role="radiogroup" aria-label="Language" id="lang-row"></div>
+          <label class="field more-field">
+            <span>More languages</span>
+            <select name="langMore" id="lang-more"></select>
+          </label>
+          <p class="hint" id="lang-hint"></p>
+        </fieldset>
+        <details class="step step-more">
+          <summary>More options</summary>
+          <label class="field">
+            <span>Anything special about this visit?</span>
+            <input type="text" name="details" maxlength="300" placeholder="Example: first time at this dentist, 2 shots">
+          </label>
+        </details>
+        <p class="hint" id="story-hint"></p>
+        <div class="actions">
+          <button type="submit" class="btn btn-big">✨ Make the story</button>
+        </div>
+      </form>
+      <div class="result" id="story-result" aria-live="polite"></div>
+      <div id="story-saved" class="no-print"></div>
+    </section>
+
+    <section data-view="about" data-title="Privacy and how it works" hidden>
+      <h1 tabindex="-1">Privacy and how it works</h1>
+      <div class="prose">
+        <h2>What stays on this device</h2>
+        <p>Everything about your child: name, favorite thing, comfort item, needs, saved stories, and their pictures. They are kept in this browser only. There are no accounts. "Delete everything" removes them.</p>
+
+        <h2>What is sent to the AI</h2>
+        <p>To write the story: the visit type, the extra details you type, age range, favorite thing, comfort item, and the "hard" and "what helps" choices. Your child's name is not sent. The AI writes "NAME" and this browser fills it in. Phone numbers, emails, dates of birth, and record numbers are removed from the details first.</p>
+        <p>To draw the pictures: the scene for each page, and the look you picked (picture style, age, skin, hair, glasses). Never a photo of your child. Photos you add stay on this phone.</p>
+        <p>To make the voice: what the friend says on each page. If you choose to hear your child's name, the first name is part of that text. It is used to make the audio and is not saved.</p>
+        <p>If a parent records their voice: the recording is sent once to ElevenLabs to make a copy of that voice, only after the parent ticks the consent box. The copy stays at ElevenLabs until you tap "Delete my voice" or "Delete everything". Only the voice id is kept on this phone.</p>
+        <p>To make videos: the page's picture and its scene are sent to fal.ai (Kling video model). The clip is saved on this phone. Videos are only made when you tap "Make it a real video".</p>
+        <p>"What scares them most" uses a fixed list of ways to help from pediatric and autism care guidance (HELPinKIDS, AAP, American Academy of Pediatric Dentistry, Autism Speaks ATN/AIR-P toolkits, child life programs). The AI picks from that list. It does not search the web, so it cannot pick up advice that is wrong or unsafe.</p>
+        <p>Everything runs on Cloudflare Workers AI: Llama 3.3 70B writes, Leonardo Lucid Origin draws, Deepgram Aura and MeloTTS speak. Languages without an AI voice use the device's own voice. The server does not save or log anything, and Cloudflare does not use it to train models.</p>
+
+        <h2>How stories are kept safe</h2>
+        <ul>
+          <li>Stories follow social story practice: they describe instead of giving orders, are honest about anything that may hurt and for how long, and never say "be brave" or "don't cry".</li>
+          <li>Every story includes the comfort item, a page saying it is OK to feel worried, and a happy ending. If the AI leaves them out, they are added back.</li>
+          <li>Pictures are gentle, with no blood and no needles touching skin.</li>
+          <li>You see every page before your child does, and can redraw any picture, pick a simple one, or use your own photo.</li>
+        </ul>
+
+        <h2>Limits</h2>
+        <ul>
+          <li>This is not medical advice. Stories describe what usually happens. Your clinic may do things differently.</li>
+          <li>AI pictures are not perfect. Sometimes a sign has nonsense letters or a detail is off. Redraw it or swap it.</li>
+        </ul>
+
+        <h2>Credits</h2>
+        <p>Made by Subramani Nagaraj for IEEE Hack for Humanity 2026. Open source under the MIT license. Simple pictures are Fluent Emoji by Microsoft (MIT). Font: Nunito (SIL Open Font License).</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot no-print">
+    <p>Project by Subramani Nagaraj &middot; <a href="#about">Privacy and how it works</a> &middot; Not medical advice. In an emergency call 911.</p>
+  </footer>
+
+</body>
+</html>

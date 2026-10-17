@@ -1,0 +1,189 @@
+{
+  "title": "Leo's Lawn Mower Dental Adventure",
+  "label": "Dentist",
+  "kidName": "Leo",
+  "age": "3-5",
+  "lang": "en",
+  "friend": {
+    "key": "tractor",
+    "name": "Mo the Mower",
+    "look": "a cute green toy lawn mower with big friendly eyes and a yellow handle",
+    "theme": "Lawn mowers"
+  },
+  "plan": [
+    {
+      "id": "mouth",
+      "label": "Things in the mouth or gagging",
+      "helps": [
+        "practice \"open wide\" in a mirror at home",
+        "raise a hand to ask for a break",
+        "breathe through the nose",
+        "know the taste first, like gritty toothpaste"
+      ],
+      "ask": [
+        "a hand signal for \"stop\"",
+        "unflavored or mild toothpaste",
+        "tell-show-do for each tool"
+      ],
+      "src": "American Academy of Pediatric Dentistry behavior guidance"
+    },
+    {
+      "id": "lights",
+      "label": "Bright lights",
+      "helps": [
+        "wear sunglasses",
+        "wear a cap",
+        "close the eyes during the light"
+      ],
+      "ask": [
+        "dimming the room lights"
+      ],
+      "src": "Autism Speaks dental toolkit"
+    }
+  ],
+  "pages": [
+    {
+      "text": "I go to the dentist. I see a big chair!",
+      "say": "Hmm... hello, Leo! It's me, Mo the Mower! [excited] Today... the dentist! You and me. Here we go!",
+      "scene": "A smiling receptionist behind a bright clinic front desk greets the child and their grown-up, with a big chair in the background.",
+      "picture": "clinic",
+      "sound": "",
+      "media": {
+        "image": "p1.jpg",
+        "voice": "p1.mp3"
+      }
+    },
+    {
+      "text": "I can bring my blue blanket with me.",
+      "say": "Ooh, look! Your blue blanket. Your blue blanket comes too! Hold it tight.",
+      "scene": "The child happily holds their blue blanket close in a calm clinic waiting room, with the friend beside them hugging something too.",
+      "picture": "comfort",
+      "sound": "",
+      "media": {
+        "image": "p2.jpg",
+        "voice": "p2.mp3"
+      }
+    },
+    {
+      "text": "It is OK to feel worried. My grown-up is there to help me.",
+      "say": "Hmm... feeling worried? That is OK, Leo. Your grown-up is here. And me too!",
+      "scene": "The child sits close to their grown-up, who gives a gentle hug. The friend snuggles in too. Calm, soft light.",
+      "picture": "feelings",
+      "sound": "",
+      "media": {
+        "image": "p3.jpg",
+        "voice": "p3.mp3"
+      }
+    },
+    {
+      "text": "I sit in the chair. It leans back slowly.",
+      "say": "Ooooh! Look, Leo! The big chair. The big blue chair! It goes back... back... back! Can you say back?",
+      "scene": "The child sits in the dentist chair with their friend, a toy lawn mower, beside them, and the chair leans back.",
+      "picture": "chair",
+      "sound": "",
+      "media": {
+        "image": "p4.jpg",
+        "voice": "p4.mp3"
+      }
+    },
+    {
+      "text": "A light shines on me. It feels like a sunny day.",
+      "say": "Ahhh! What is that? The light. The big light! It shines on your teeth. Can you see it?",
+      "scene": "The child and their friend look up at the bright light above, with sunglasses on the child's face.",
+      "picture": "light",
+      "sound": "",
+      "media": {
+        "image": "p5.jpg",
+        "voice": "p5.mp3"
+      }
+    },
+    {
+      "text": "I get a paper bib. It keeps me clean.",
+      "say": "Oh my! Look! A bib. A paper bib! It keeps you clean. Can you put it on?",
+      "scene": "The hygienist gently puts a paper bib around the child's neck, with the friend watching.",
+      "picture": "room",
+      "sound": "",
+      "media": {
+        "image": "p6.jpg",
+        "voice": "p6.mp3"
+      }
+    },
+    {
+      "text": "I open my mouth wide. Like a big lawn mower mouth!",
+      "say": "Psst... look at me. Open wide. Like a big mower! Can you show me?",
+      "scene": "The child opens their mouth wide, with the friend beside them opening its mouth wide too, and the hygienist looks inside with a small mirror.",
+      "picture": "mouth",
+      "sound": "",
+      "media": {
+        "image": "p7.jpg",
+        "voice": "p7.mp3"
+      }
+    },
+    {
+      "text": "The hygienist counts my teeth. With a tiny mirror.",
+      "say": "Hmm... what do I see? A mirror. A tiny mirror! It looks at your teeth. Can you see it?",
+      "scene": "The hygienist uses a small mirror to count the child's teeth, with the friend watching closely.",
+      "picture": "mouth",
+      "sound": "",
+      "media": {
+        "image": "p8.jpg",
+        "voice": "p8.mp3"
+      }
+    },
+    {
+      "text": "A toothbrush buzzes. Like a small lawn mower!",
+      "say": "Ooooh! Look! A toothbrush. A buzzing toothbrush! It cleans your teeth. Can you say buzz?",
+      "scene": "The hygienist uses a buzzing toothbrush to clean the child's teeth, with the friend making a buzzing sound beside them.",
+      "picture": "toothbrush",
+      "sound": "Bzzz",
+      "media": {
+        "image": "p9.jpg",
+        "voice": "p9.mp3"
+      }
+    },
+    {
+      "text": "I feel water spray. And a straw slurps it.",
+      "say": "Ahhh! What is that? Water spray! And a straw. A slurpy straw! Can you hear it?",
+      "scene": "The hygienist uses a water spray and a straw to clean the child's teeth, with the friend watching and the child holding their blue blanket.",
+      "picture": "mouth",
+      "sound": "Slurp!",
+      "media": {
+        "image": "p10.jpg",
+        "voice": "p10.mp3"
+      }
+    },
+    {
+      "text": "I taste gritty toothpaste. It feels funny.",
+      "say": "Psst... Leo. Try it. Gritty toothpaste. It feels funny. Can you taste it?",
+      "scene": "The hygienist gives the child a taste of gritty toothpaste, with the friend watching and the child making a face.",
+      "picture": "mouth",
+      "sound": "",
+      "media": {
+        "image": "p11.jpg",
+        "voice": "p11.mp3"
+      }
+    },
+    {
+      "text": "The dentist looks at me. And says I'm done!",
+      "say": "Ooooh! Look, Leo! The dentist. The dentist is done! You did it! Can you smile?",
+      "scene": "The dentist smiles and gives the child a thumbs up, with the friend cheering and the child smiling.",
+      "picture": "done",
+      "sound": "",
+      "media": {
+        "image": "p12.jpg",
+        "voice": "p12.mp3"
+      }
+    },
+    {
+      "text": "I leave the dentist. And get a sticker!",
+      "say": "Hmm... we're done! You and me. We did it! Now, let's go play with lawn mowers!",
+      "scene": "The child and their friend leave the dentist office, with the child holding a sticker and the friend waving goodbye.",
+      "picture": "home",
+      "sound": "",
+      "media": {
+        "image": "p13.jpg",
+        "voice": "p13.mp3"
+      }
+    }
+  ]
+}

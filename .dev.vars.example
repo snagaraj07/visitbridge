@@ -1,0 +1,8 @@
+# Set to 1 to return sample answers instead of calling Workers AI
+MOCK_AI=0
+
+# Optional. Real-looking video clips (fal.ai). Leave empty to turn off.
+FAL_KEY=
+
+# Optional. Lets a parent record their voice to tell the story (ElevenLabs). Leave empty to turn off.
+ELEVENLABS_API_KEY=

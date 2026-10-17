@@ -1,0 +1,34 @@
+[
+  {
+    "id": "haircut",
+    "title": "Leo's haircut adventure",
+    "label": "Haircut",
+    "friend": "Mo the Mower",
+    "cover": "p1.jpg",
+    "videos": 13
+  },
+  {
+    "id": "dentist",
+    "title": "Leo's Lawn Mower Dental Adventure",
+    "label": "Dentist",
+    "friend": "Mo the Mower",
+    "cover": "p1.jpg",
+    "videos": 0
+  },
+  {
+    "id": "shot",
+    "title": "Leo's dinosaur vaccine adventure",
+    "label": "Shot",
+    "friend": "Rex the Dinosaur",
+    "cover": "p1.jpg",
+    "videos": 9
+  },
+  {
+    "id": "blood-test",
+    "title": "Leo's train adventure to the doctor",
+    "label": "Blood test",
+    "friend": "Choo the Train",
+    "cover": "p1.jpg",
+    "videos": 0
+  }
+]

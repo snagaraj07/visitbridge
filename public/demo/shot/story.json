@@ -1,0 +1,157 @@
+{
+  "title": "Leo's dinosaur vaccine adventure",
+  "label": "Shot",
+  "kidName": "Leo",
+  "age": "3-5",
+  "lang": "en",
+  "friend": {
+    "key": "dinosaur",
+    "name": "Rex the Dinosaur",
+    "look": "a cute green toy dinosaur with big friendly eyes",
+    "theme": "Dinosaurs"
+  },
+  "plan": [
+    {
+      "id": "needle",
+      "label": "Needles or shots",
+      "helps": [
+        "sit up on the grown-up's lap in a comfort hug instead of lying down",
+        "look at a video, bubbles, or a toy during the poke",
+        "pick which arm",
+        "take slow balloon breaths",
+        "know it hurts for about 2 seconds, then it is over"
+      ],
+      "ask": [
+        "numbing cream about an hour before",
+        "a cold or vibrating device on the arm (like Buzzy)",
+        "doing it sitting up, in a comfort hold",
+        "counting down \"3, 2, 1\" only if the child likes that"
+      ],
+      "src": "HELPinKIDS clinical guideline (CMAJ 2015); AAP HealthyChildren.org"
+    },
+    {
+      "id": "held",
+      "label": "Being held still",
+      "helps": [
+        "sit on the grown-up's lap in a hug",
+        "have a job, like holding the tissue",
+        "know the count, like \"still for 5 seconds\""
+      ],
+      "ask": [
+        "a comfort hold instead of restraint",
+        "short steps with breaks"
+      ],
+      "src": "AAP and child life comfort positioning guidance"
+    }
+  ],
+  "pages": [
+    {
+      "text": "I go to the clinic. I see a big desk.",
+      "say": "Hmm... hello, Leo! It's me, Rex the Dinosaur! [excited] Today... the clinic! You and me. Here we go!",
+      "scene": "A smiling receptionist behind a bright clinic front desk greets the child and their grown-up, with Rex the Dinosaur standing beside them.",
+      "picture": "clinic",
+      "sound": "",
+      "media": {
+        "image": "p1.jpg",
+        "voice": "p1.mp3",
+        "video": "p1.mp4"
+      }
+    },
+    {
+      "text": "I wait. I have my blue blanket.",
+      "say": "Ooooh! Look, Leo! The blue blanket. The soft blue blanket! Can you hold it tight?",
+      "scene": "The child sits in a waiting area with their grown-up and Rex the Dinosaur, holding the blue blanket.",
+      "picture": "comfort",
+      "sound": "",
+      "media": {
+        "image": "p2.jpg",
+        "voice": "p2.mp3",
+        "video": "p2.mp4"
+      }
+    },
+    {
+      "text": "It is OK to feel worried. My grown-up is there to help me.",
+      "say": "Hmm... feeling worried? That is OK, Leo. Your grown-up is here. And me too!",
+      "scene": "The child sits close to their grown-up, who gives a gentle hug. The friend snuggles in too. Calm, soft light.",
+      "picture": "feelings",
+      "sound": "",
+      "media": {
+        "image": "p3.jpg",
+        "voice": "p3.mp3",
+        "video": "p3.mp4"
+      }
+    },
+    {
+      "text": "The nurse calls my name. Then we walk to a room.",
+      "say": "Ahhh! What is that? The nurse. The nurse is calling you! Let's go, Leo!",
+      "scene": "The nurse stands at the door of the exam room, calling the child's name, with the child, their grown-up, and Rex the Dinosaur walking towards her.",
+      "picture": "nurse",
+      "sound": "",
+      "media": {
+        "image": "p4.jpg",
+        "voice": "p4.mp3",
+        "video": "p4.mp4"
+      }
+    },
+    {
+      "text": "I sit on my grown-up's lap. I get a big hug.",
+      "say": "Psst... look over here! The lap. The cozy lap! You can sit up and look at me.",
+      "scene": "The child sits on their grown-up's lap in the exam room, with Rex the Dinosaur standing beside them and the grown-up giving a big hug.",
+      "picture": "hold",
+      "sound": "",
+      "media": {
+        "image": "p5.jpg",
+        "voice": "p5.mp3",
+        "video": "p5.mp4"
+      }
+    },
+    {
+      "text": "The nurse shows me tools. I see a cold wipe.",
+      "say": "Oh my! Look! The wipe. The cold wipe! It will feel cool on your arm.",
+      "scene": "The nurse holds up the cold wipe and shows it to the child, who is sitting on their grown-up's lap with Rex the Dinosaur beside them.",
+      "picture": "arm",
+      "sound": "",
+      "media": {
+        "image": "p6.jpg",
+        "voice": "p6.mp3",
+        "video": "p6.mp4"
+      }
+    },
+    {
+      "text": "I get a shot. It hurts for 2 seconds.",
+      "say": "Psst... Leo. Now the shot. A sharp poke. It hurts for 2 seconds. One... two... done! I'm right here. Squeeze your grown-up's hand.",
+      "scene": "The nurse gives the child a shot while the child sits on their grown-up's lap, with Rex the Dinosaur standing beside them and the child holding their grown-up's hand.",
+      "picture": "needle",
+      "sound": "",
+      "media": {
+        "image": "p7.jpg",
+        "voice": "p7.mp3",
+        "video": "p7.mp4"
+      }
+    },
+    {
+      "text": "I get a bandage. It covers the poke.",
+      "say": "Hmm... what do I see? The bandage. The sticky bandage! It will help your arm feel better.",
+      "scene": "The nurse puts a bandage on the child's arm, with the child sitting on their grown-up's lap and Rex the Dinosaur standing beside them.",
+      "picture": "bandage",
+      "sound": "",
+      "media": {
+        "image": "p8.jpg",
+        "voice": "p8.mp3",
+        "video": "p8.mp4"
+      }
+    },
+    {
+      "text": "The visit is over. I can play now.",
+      "say": "Ooooh! Look, Leo! All done! Your dinosaurs. Your dinosaurs! Play time! Can you roar?",
+      "scene": "The child sits on the floor with their grown-up and Rex the Dinosaur, playing with dinosaur toys.",
+      "picture": "play",
+      "sound": "",
+      "media": {
+        "image": "p9.jpg",
+        "voice": "p9.mp3",
+        "video": "p9.mp4"
+      }
+    }
+  ]
+}
