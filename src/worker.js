@@ -36,6 +36,14 @@ export default {
     const route = ROUTES[url.pathname];
     if (!route) return json({ error: 'Not found.' }, 404);
     if (request.method !== 'POST') return json({ error: 'Use POST.' }, 405);
+    if (!sameSite(request, url)) return json({ error: 'Not allowed.' }, 403);
+    if (Number(request.headers.get('content-length')) > (route.form ? FORM_MAX : JSON_MAX)) {
+      return json({ error: 'Request is too big.' }, 413);
+    }
+    if (env.LIMITER) {
+      const { success } = await env.LIMITER.limit({ key: request.headers.get('cf-connecting-ip') || 'anon' });
+      if (!success) return json({ error: 'Too many requests. Please wait a minute.' }, 429);
+    }
 
     let body = request;
     if (!route.form) {
@@ -64,6 +72,19 @@ export default {
 };
 
 const LIMIT_MESSAGE = 'The AI has hit its limit for today. Please try again later, or watch the sample story.';
+const JSON_MAX = 2 * 1024 * 1024;
+const FORM_MAX = 11 * 1024 * 1024;
+
+// Browsers always send Origin on POST, so this stops other sites from spending this server's AI credit.
+function sameSite(request, url) {
+  const origin = request.headers.get('origin');
+  if (!origin) return true;
+  try {
+    return new URL(origin).host === url.host;
+  } catch {
+    return false;
+  }
+}
 
 function overLimit(err) {
   return /daily free allocation|\b429\b|rate limit/i.test(err?.message || '');
@@ -79,6 +100,7 @@ function json(data, status = 200) {
     headers: {
       'content-type': 'application/json; charset=utf-8',
       'cache-control': 'no-store',
+      'x-content-type-options': 'nosniff',
     },
   });
 }

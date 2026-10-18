@@ -1,10 +1,21 @@
 {
   "name": "visitbridge",
   "version": "0.1.0",
+  "description": "AI story videos that prepare autistic kids for doctor visits, dentist visits and daily routines.",
   "private": true,
   "type": "module",
   "author": "Subramani Nagaraj",
   "license": "MIT",
+  "homepage": "https://visitbridge.alavai.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snagaraj07/visitbridge.git"
+  },
+  "bugs": "https://github.com/snagaraj07/visitbridge/issues",
+  "keywords": ["autism", "accessibility", "social-story", "healthcare", "cloudflare-workers", "ai"],
+  "engines": {
+    "node": ">=22.9"
+  },
   "scripts": {
     "local": "node --watch --env-file-if-exists=.env dev/server.js",
     "dev": "wrangler dev",

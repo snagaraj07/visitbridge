@@ -105,7 +105,7 @@ const FRIEND_RULES = (friend) => `Friend rules:
 - After the first page the friend says "I" and "me", never its own name.
 - "say" follows the same honesty rules. When something hurts, say so and say how long, then say how the friend and the grown-up will help. Example: "Psst... NAME. Now the shot. A sharp poke. It hurts for 2 seconds. One... two... done! I'm right here. Squeeze your grown-up's hand."
 - The friend never says "be brave", "don't cry", "hold still", or "it won't hurt". The friend never does the medical steps.
-- "friendLook": how the friend looks, for the illustrator, under 20 words. Example: "a cute green toy lawn mower with big friendly eyes and a yellow handle".`;
+- "friendLook": how the friend looks, for the illustrator, under 20 words. Example: "a cute green toy lawn mower with big friendly eyes and a yellow handle". It must be an original look, never a known character. For a train, never a blue engine with a gray face; pick other colors.`;
 
 // Autistic kids often have a strong favorite interest. Telling the visit
 // through it keeps them listening, but the medical steps must stay real.

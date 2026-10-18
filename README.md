@@ -1,74 +1,111 @@
 # VisitBridge
 
-IEEE Hack for Humanity 2026
-Track 2: AI for Accessibility and Disability Inclusion
+[![CI](https://github.com/snagaraj07/visitbridge/actions/workflows/ci.yml/badge.svg)](https://github.com/snagaraj07/visitbridge/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/snagaraj07/visitbridge/actions/workflows/codeql.yml/badge.svg)](https://github.com/snagaraj07/visitbridge/actions/workflows/codeql.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Helps parents get their autistic kid through doctor and dentist visits.
+**Live:** https://visitbridge.alavai.ai
 
-For a lot of autistic kids a check-up is a string of surprises: strangers,
-loud rooms, a cuff that squeezes, something cold in their ear. Kids get
-held down, visits get cut short, and families skip care. Dental care is
-the most commonly unmet need for these kids. VisitBridge helps the parent
-prepare the child at home and hands the clinic staff what they need to know.
+IEEE Hack for Humanity 2026, Track 2: AI for Accessibility and Disability Inclusion.
+
+VisitBridge makes a short animated story, told out loud, that shows an
+autistic child exactly what will happen at a doctor visit, a dentist visit,
+a haircut, or a daily routine like bath time or bedtime. A friend from the
+child's favorite thing tells the story, so a kid who loves lawn mowers hears
+Mo the Mower walk them through every step.
 
 Not a diagnostic tool. Not medical advice.
 
+## Why
+
+For many autistic kids a check-up is a string of surprises: strangers, loud
+rooms, a cuff that squeezes, something cold in their ear. Kids get held down,
+visits get cut short, and families skip care. Daily routines can be just as
+hard. Social stories and visual supports are proven ways to help, but making
+one by hand for each visit takes a parent hours.
+
 ## What it does
 
-- **Visit story** - pick the visit (check-up, dental cleaning, shot, blood
-  test, ear check, eye exam, X-ray, hearing test). The AI writes a social
-  story for that visit in the child's voice, step by step, using what is
-  hard for them and what helps. The parent can tell it through the
-  child's favorite thing: pick "lawn mowers" and Mo the Mower comes along,
-  and the toothbrush "sounds like a tiny lawn mower". The medical steps
-  stay real; the theme only adds a friend and comparisons. Each page has one true, interesting detail
-  or a small job for the child, and the real sound they will hear
-  ("Bzzzz", "Beep!"). Pages play as animated scenes, and words light up as
-  they are read aloud. Turn on "No movement" under Display for a still version. If a
-  picture doesn't fit, the parent can pick another one or use their own
-  photo of the real clinic or the child's teddy. Photos stay on the device.
-  Print it as a booklet for the night before.
-- **Demos** - ready-made stories for the hardest visits (haircut, dentist,
-  shot, blood test) that play from saved files.
+- **Story for the exact visit or routine.** Doctor and dentist visits, shots,
+  blood tests, haircuts, bath, bedtime, toilet, school and more.
+- **Plans for what scares them.** The parent picks the hard parts (needles,
+  loud sounds, being touched, waiting) or types them. The story gives the
+  child a plan for that moment, from pediatric and autism care guidance.
+- **Made for how the child listens.** Ages 3 to 5 get tiny sentences, an
+  attention hook on each page, and repeated key words. A slow mode (🐢)
+  slows the voice, the video and the page turns.
+- **Looks like them.** The child in the pictures matches the skin, hair and
+  glasses the parent picks. A photo of the child is never used.
+- **40 languages,** with AI voices where available and the device voice
+  otherwise. Words light up as they are read.
+- **Honest about pain.** "A sharp poke. It hurts for 2 seconds." Never
+  "it won't hurt" or "be brave".
+- **Demos** for the hardest visits play from saved files, with no AI calls.
 
 ## Privacy and safety
 
-- The child's profile lives in localStorage only. No accounts, nothing
-  stored on the server.
-- The child's name is never sent. The model writes "NAME" in the title and
+- The child's profile and stories live in the browser only. No accounts, no
+  database, nothing about the child is stored on the server.
+- The child's name is never sent to the story AI. The model writes "NAME" and
   the browser fills it in.
-- Phone numbers, emails, DOB, MRN, addresses and "Patient:" names are
-  stripped before any text goes to the model (`src/scrub.js`).
-- The model can only pick pictures from a fixed list. No generated images.
-- Every story has the comfort item, an "it's OK to feel worried" page and
-  a clear ending. If the model leaves them out, the code adds them back.
-- Stories are honest about pain ("hurts for about 2 seconds") and avoid
-  words like "pinch", "quick" and "brave".
-- Model: Llama 3.3 70B on Cloudflare Workers AI.
+- Phone numbers, emails, dates of birth, MRNs, addresses and patient names are
+  removed before any text reaches a model (`src/scrub.js`).
+- Every story has the comfort item, an "it's OK to feel worried" page and a
+  happy ending. If the model leaves them out, the code adds them back.
+- Pictures are gentle: no blood and no needles touching skin. Story friends
+  are original characters, never from a show, movie or toy brand.
+- Server logs never include request content.
+
+See [SECURITY.md](SECURITY.md) for the security model and how to report a problem.
+
+## How it works
+
+| Part | Technology |
+| --- | --- |
+| Server | Cloudflare Workers (`src/`) |
+| App | Plain HTML, CSS and JavaScript modules (`public/`), no build step |
+| Story | Llama 3.3 70B on Workers AI |
+| Pictures | Leonardo Lucid Origin on Workers AI |
+| Voice | Deepgram Aura 2 and MeloTTS on Workers AI; ElevenLabs (optional) |
+| Video | Kling 2.1 on fal.ai (optional) |
+
+More detail in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Run it
 
+Needs Node.js 22.9 or newer.
+
 ```
-npm install
+npm ci
 npm test
 ```
 
-Put `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` in a `.env` file, then:
+Create `.env` (never committed) using [.dev.vars.example](.dev.vars.example):
+
+```
+CLOUDFLARE_API_TOKEN=...
+CLOUDFLARE_ACCOUNT_ID=...
+```
 
 ```
 npm run local     # http://localhost:8787
 ```
 
 Without keys it falls back to a sample story. `npm run dev` uses wrangler
-instead (needs macOS 13.5+). `npm run deploy` pushes to Cloudflare.
+instead (needs macOS 13.5+). `npm run deploy` publishes to Cloudflare.
+Production secrets are set with `wrangler secret put`, never in files.
 
 ## Layout
 
 ```
-src/        worker: routes, story prompt, scrubbing
-public/     the app (plain HTML, CSS, JS modules, no build step)
-dev/        local server for machines that can't run workerd
-test/       node --test
+src/            Worker: routes, story prompt, pictures, voice, video, scrubbing
+public/         The app, served as static files
+public/demo/    Ready-made demo stories
+public/_headers Security headers for every page
+dev/            Local server and the demo maker
+test/           Unit tests (node --test)
+docs/           Architecture
+.github/        CI, CodeQL, Dependabot, templates
 ```
 
 ## Sources
@@ -82,4 +119,4 @@ test/       node --test
 
 ## License
 
-MIT - Subramani Nagaraj
+[MIT](LICENSE). Project by Subramani Nagaraj.

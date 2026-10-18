@@ -38,7 +38,7 @@ const DEMOS = [
     fears: ['noise', 'touch'], fearText: 'he cries when the clippers buzz near his ears' },
   { id: 'dentist', label: 'Dentist', visitType: 'Dental cleaning', theme: 'Lawn mowers', fears: ['mouth', 'lights'] },
   { id: 'shot', label: 'Shot', visitType: 'Vaccine or shot', theme: 'Dinosaurs', fears: ['needle', 'held'] },
-  { id: 'blood-test', label: 'Blood test', visitType: 'Blood test', theme: 'Trains', fears: ['needle', 'away'] },
+  { id: 'blood-test', label: 'Blood test', visitType: 'Blood test', theme: 'Space rockets', fears: ['needle', 'away'] },
 ];
 
 const args = Object.fromEntries(process.argv.slice(2).map((a) => {

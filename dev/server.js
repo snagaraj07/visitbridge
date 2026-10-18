@@ -57,7 +57,23 @@ async function serveStatic(request) {
     file = join(PUBLIC, 'index.html');
     body = await readFile(file);
   }
-  return new Response(body, { headers: { 'content-type': TYPES[extname(file)] ?? 'application/octet-stream' } });
+  return new Response(body, {
+    headers: { ...(await securityHeaders()), 'content-type': TYPES[extname(file)] ?? 'application/octet-stream' },
+  });
+}
+
+// Same headers Cloudflare reads from public/_headers, minus the ones that need HTTPS.
+let headers;
+async function securityHeaders() {
+  headers ??= Object.fromEntries(
+    (await readFile(join(PUBLIC, '_headers'), 'utf8'))
+      .split('\n')
+      .filter((line) => /^\s+\S+:/.test(line))
+      .map((line) => line.trim().split(/:\s*(.*)/).slice(0, 2))
+      .filter(([name]) => name !== 'Strict-Transport-Security')
+      .map(([name, value]) => [name, value.replace('; upgrade-insecure-requests', '')]),
+  );
+  return headers;
 }
 
 http

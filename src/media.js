@@ -25,6 +25,7 @@ const STYLES = {
 };
 const SAFE = 'Warm, calm, and child-safe. The friend copies what the child is doing. Blank walls and blank signs: '
   + 'no text, no words, no letters, no logos. No blood, no scary tools. '
+  + 'The friend is a brand-new original character, not from any TV show, movie, book, game, or toy brand. '
   + 'The child is fully covered at all times: clothes, pajamas, a towel wrap, or thick bubbles up to the shoulders.';
 // Scenes where the image model could show too much. These get a fixed safe framing.
 const PRIVATE = /\b(bath|bathtub|shower|toilet|potty|undress|naked|diaper|changing)\b/i;

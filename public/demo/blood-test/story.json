@@ -1,14 +1,14 @@
 {
-  "title": "Leo's train adventure to the doctor",
+  "title": "Leo's Space Adventure to the Doctor",
   "label": "Blood test",
   "kidName": "Leo",
   "age": "3-5",
   "lang": "en",
   "friend": {
-    "key": "train",
-    "name": "Choo the Train",
-    "look": "a cute toy train with a big smile and a blue body",
-    "theme": "Trains"
+    "key": "rocket",
+    "name": "Zip",
+    "look": "a cute Space rockets with big friendly eyes and a shiny metal body",
+    "theme": "Space rockets"
   },
   "plan": [
     {
@@ -46,9 +46,9 @@
   ],
   "pages": [
     {
-      "text": "I go to the clinic. I see trains outside.",
-      "say": "Hmm... hello, Leo! It's me, Choo the Train! [excited] Today... the doctor! You and me. Here we go!",
-      "scene": "A smiling receptionist behind a bright clinic front desk greets the child and their grown-up, with Choo the Train beside them.",
+      "text": "I go to the doctor. I see a big building.",
+      "say": "Hmm... hello, Leo! It's me, Zip! [excited] Today... the doctor! You and me. Here we go!",
+      "scene": "A smiling child and Zip, a cute Space rockets with big friendly eyes, walking towards a big clinic building.",
       "picture": "clinic",
       "sound": "",
       "media": {
@@ -57,9 +57,9 @@
       }
     },
     {
-      "text": "I wait. I have my blue blanket.",
-      "say": "Ooooh! Look, Leo! The blue blanket. The soft blue blanket! Can you hold it?",
-      "scene": "The child sits with their grown-up in a waiting room, holding the blue blanket, and Choo the Train is on their lap.",
+      "text": "I sit down. I wait.",
+      "say": "Ooooh! Look, Leo! The wait room. The big wait room! Can you see it?",
+      "scene": "The child and Zip sitting in a wait room with toys and chairs.",
       "picture": "wait",
       "sound": "",
       "media": {
@@ -68,10 +68,10 @@
       }
     },
     {
-      "text": "I sit in a chair. It has an armrest.",
-      "say": "Ahhh! What is that? The chair. The big chair! It goes up... up... up! Can you see it?",
-      "scene": "The child sits in a big chair with an armrest, and Choo the Train is beside them, also sitting in a tiny chair.",
-      "picture": "chair",
+      "text": "It is OK to feel worried. My grown-up is there to help me.",
+      "say": "Hmm... feeling worried? That is OK, Leo. Your grown-up is here. And me too!",
+      "scene": "The child sits close to their grown-up, who gives a gentle hug. The friend snuggles in too. Calm, soft light.",
+      "picture": "feelings",
       "sound": "",
       "media": {
         "image": "p3.jpg",
@@ -79,10 +79,10 @@
       }
     },
     {
-      "text": "A band goes on my arm. It feels tight.",
-      "say": "Oh my! Look! The band. The stretchy band! Can you feel it?",
-      "scene": "A nurse puts a stretchy band on the child's arm, while the child holds their blue blanket and Choo the Train looks on.",
-      "picture": "arm",
+      "text": "My name is called. I stand up.",
+      "say": "Ahhh! What is that? Your name! Let's go, Leo.",
+      "scene": "A nurse calling the child's name, with the child and Zip standing up.",
+      "picture": "name",
       "sound": "",
       "media": {
         "image": "p4.jpg",
@@ -90,10 +90,10 @@
       }
     },
     {
-      "text": "I feel worried. My grown-up is here.",
-      "say": "Psst... Leo. It is OK to feel worried. I am here. Your grown-up is here.",
-      "scene": "The child looks worried, holding their blue blanket, and Choo the Train gives a reassuring look, while the grown-up comforts them.",
-      "picture": "feelings",
+      "text": "I pick an arm. It is my choice.",
+      "say": "Oh my! Look! Two arms. Which one, Leo? You choose.",
+      "scene": "The child and Zip in a room with a nurse, choosing which arm to use.",
+      "picture": "arm",
       "sound": "",
       "media": {
         "image": "p5.jpg",
@@ -101,10 +101,10 @@
       }
     },
     {
-      "text": "The nurse shows me a needle. It is small.",
-      "say": "Hmm... what do I see? The needle. The little needle! Can you see it?",
-      "scene": "The nurse shows the child a needle, while the child holds their blue blanket and Choo the Train looks on.",
-      "picture": "needle",
+      "text": "A band goes tight. It feels like a hug.",
+      "say": "Psst... look over here! A band. It goes tight. Like a rocket seatbelt!",
+      "scene": "A nurse putting a stretchy band around the child's arm, with Zip beside them.",
+      "picture": "arm",
       "sound": "",
       "media": {
         "image": "p6.jpg",
@@ -112,9 +112,9 @@
       }
     },
     {
-      "text": "The needle hurts. For 2 seconds.",
-      "say": "Psst... Leo. Now the poke. A sharp poke. It hurts for 2 seconds. One... two... done! I'm right here. Squeeze your grown-up's hand.",
-      "scene": "The nurse gives the child a shot, while the child sits on the grown-up's lap, holding the blue blanket, and Choo the Train is beside them.",
+      "text": "I see a needle. It is small.",
+      "say": "Hmm... what do I see? A needle. It is small. Just for a second, Leo.",
+      "scene": "The child and Zip looking at a needle, with a nurse holding it.",
       "picture": "needle",
       "sound": "",
       "media": {
@@ -123,20 +123,20 @@
       }
     },
     {
-      "text": "Tubes fill up. It takes a minute.",
-      "say": "Ooooh! Look! The tubes. The little tubes! Can you see them fill up?",
-      "scene": "The child watches as small tubes fill up with blood, while holding their blue blanket and Choo the Train looks on.",
-      "picture": "arm",
-      "sound": "Glug glug",
+      "text": "It hurts for 2 seconds. Then it is done.",
+      "say": "Psst... Leo. Now the poke. A sharp poke. It hurts for 2 seconds. One... two... done! I'm right here. Squeeze your grown-up's hand.",
+      "scene": "The child sitting on their grown-up's lap, with Zip beside them, and a nurse giving the shot.",
+      "picture": "needle",
+      "sound": "",
       "media": {
         "image": "p8.jpg",
         "voice": "p8.mp3"
       }
     },
     {
-      "text": "I get a bandage. It is sticky.",
-      "say": "Ahhh! What is that? The bandage. The sticky bandage! Can you feel it?",
-      "scene": "The nurse puts a bandage on the child's arm, while the child holds their blue blanket and Choo the Train looks on.",
+      "text": "I get a bandage. It is colorful.",
+      "say": "Ooooh! Look, Leo! A bandage. The colorful bandage! All done!",
+      "scene": "A nurse putting a bandage on the child's arm, with Zip and the child smiling.",
       "picture": "bandage",
       "sound": "",
       "media": {
@@ -145,21 +145,21 @@
       }
     },
     {
-      "text": "The visit is over. I can play trains.",
-      "say": "Hmm... all done! Now we play trains! Choo choo! Can you make train sounds?",
-      "scene": "The child plays with toy trains, with Choo the Train beside them, and the grown-up smiles.",
-      "picture": "friend",
-      "sound": "Choo choo",
+      "text": "I have my blue blanket. It makes me feel safe.",
+      "say": "Ahhh! What is that? Your blue blanket! You're safe, Leo.",
+      "scene": "The child holding their blue blanket, with Zip beside them and a grown-up hugging them.",
+      "picture": "comfort",
+      "sound": "",
       "media": {
         "image": "p10.jpg",
         "voice": "p10.mp3"
       }
     },
     {
-      "text": "I go home. I am happy.",
-      "say": "Ooooh! Look, Leo! We're going home! You and me. Here we go! [excited]",
-      "scene": "The child and their grown-up leave the clinic, with Choo the Train beside them, and the child holds their blue blanket.",
-      "picture": "home",
+      "text": "The visit is over. I get to play.",
+      "say": "Hmm... what's next, Leo? Playtime! You and me. Space rockets!",
+      "scene": "The child and Zip playing with space rockets toys, with a grown-up smiling.",
+      "picture": "play",
       "sound": "",
       "media": {
         "image": "p11.jpg",

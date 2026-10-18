@@ -1,0 +1,14 @@
+name: Idea
+description: A visit, routine or feature that would help your child
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does it matter for your child or family?
