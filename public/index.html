@@ -22,6 +22,7 @@
     </a>
     <nav class="top-nav" aria-label="Main">
       <a href="#story">Story</a>
+      <a href="#play">Play</a>
       <a href="#child">My child</a>
     </nav>
     <button type="button" class="btn-plain btn-small" id="display-btn" aria-expanded="false" aria-controls="display">Display</button>
@@ -71,7 +72,9 @@
 
       <ol class="tiles">
         <li><a class="tile" href="#child"><img src="/img/3d/comfort.png" alt=""><span class="tile-step">Step 1</span><strong>About your child</strong><span>Favorite thing, comfort item, what's hard, what helps.</span></a></li>
-        <li><a class="tile tile-main" href="#story"><img src="/img/3d/book.png" alt=""><span class="tile-step">Days before</span><strong>Visit story</strong><span>An animated, narrated story of this exact visit. Watch it together each day.</span></a></li>      </ol>
+        <li><a class="tile tile-main" href="#story"><img src="/img/3d/book.png" alt=""><span class="tile-step">Days before</span><strong>Visit story</strong><span>An animated, narrated story of this exact visit. Watch it together each day.</span></a></li>
+        <li><a class="tile" href="#play"><img src="/img/3d/play.png" alt=""><span class="tile-step">Every day, ages 1 to 5</span><strong>Play Coach</strong><span>One 5-minute game a day that helps your child connect and communicate. Free, while you wait for help.</span></a></li>
+      </ol>
     </section>
 
     <section data-view="child" data-title="About your child" hidden>
@@ -220,6 +223,12 @@
       <div id="story-saved" class="no-print"></div>
     </section>
 
+    <section data-view="play" data-title="Play Coach" hidden>
+      <h1 tabindex="-1">Play Coach</h1>
+      <p class="lead">Five minutes of play a day, made for your child. Each game uses one skill from parent-led play therapy, which research shows helps young autistic children connect and communicate.</p>
+      <div id="play-app"></div>
+    </section>
+
     <section data-view="about" data-title="Privacy and how it works" hidden>
       <h1 tabindex="-1">Privacy and how it works</h1>
       <div class="prose">
@@ -231,6 +240,8 @@
         <p>To draw the pictures: the scene for each page, and the look you picked (picture style, age, skin, hair, glasses). Never a photo of your child. Photos you add stay on this phone.</p>
         <p>To make the voice: what the friend says on each page. If you choose to hear your child's name, the first name is part of that text. It is used to make the audio and is not saved.</p>
         <p>If a parent records their voice: the recording is sent once to ElevenLabs to make a copy of that voice, only after the parent ticks the consent box. The copy stays at ElevenLabs until you tap "Delete my voice" or "Delete everything". Only the voice id is kept on this phone.</p>
+        <p>For Play Coach: the game picked for today, the age group, the talk level, the favorite thing, and the language. Never the name, and never the play log. The play log stays on this phone.</p>
+        <p>Play Coach games come from a fixed library built on parent-led, play-based approaches with strong research: PACT (Green et al., Lancet 2010; Pickles et al., Lancet 2016), ESDM (Dawson et al., Pediatrics 2010), JASPER (Kasari et al.), and Hanen "More Than Words". The AI only rewrites a game around the child's favorite thing. It is not therapy and does not replace an evaluation.</p>
         <p>To make videos: the page's picture and its scene are sent to fal.ai (Kling video model). The clip is saved on this phone. Videos are only made when you tap "Make it a real video".</p>
         <p>"What scares them most" uses a fixed list of ways to help from pediatric and autism care guidance (HELPinKIDS, AAP, American Academy of Pediatric Dentistry, Autism Speaks ATN/AIR-P toolkits, child life programs). The AI picks from that list. It does not search the web, so it cannot pick up advice that is wrong or unsafe.</p>
         <p>Everything runs on Cloudflare Workers AI: Llama 3.3 70B writes, Leonardo Lucid Origin draws, Deepgram Aura and MeloTTS speak. Languages without an AI voice use the device's own voice. The server does not save or log anything, and Cloudflare does not use it to train models.</p>

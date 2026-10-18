@@ -131,5 +131,14 @@ for (const [key, f] of Object.entries(FRIENDS)) f.img = `/img/3d/${key}.png`;
 
 export const FRIEND_KEYS = Object.keys(FRIENDS);
 
+// The model sometimes picks an odd icon (a ladybug for lawn mowers), so a
+// plain name match wins when there is one.
+export function friendFor(theme) {
+  const one = (s) => s.toLowerCase().trim().replace(/(\w)s\b/g, '$1');
+  const want = one(theme);
+  return FRIEND_KEYS.find((key) => [key, ...FRIENDS[key].label.split(/ or |,/)]
+    .map(one).some((name) => name && (want.includes(name) || name.includes(want))));
+}
+
 // The guide when the parent doesn't pick a favorite thing.
 export const DEFAULT_FRIEND = { key: 'owl', name: 'Ollie the Owl', look: 'a small, round brown owl with big friendly eyes and a soft cream belly' };

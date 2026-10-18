@@ -2,6 +2,7 @@ import { initDisplay } from './display.js';
 import { initKids, hasKid, refreshStoryView } from './kids.js';
 import { stopSpeaking } from './speech.js';
 import { initDemos } from './demos.js';
+import { initPlay, refreshPlay } from './play.js';
 
 const views = [...document.querySelectorAll('[data-view]')];
 const navLinks = [...document.querySelectorAll('.top-nav a')];
@@ -21,6 +22,7 @@ function route() {
 
   if (view.dataset.view === 'home') document.getElementById('child-nudge').hidden = hasKid();
   if (view.dataset.view === 'story') refreshStoryView();
+  if (view.dataset.view === 'play') refreshPlay();
 
   window.scrollTo(0, 0);
   view.querySelector('h1')?.focus({ preventScroll: true });
@@ -29,6 +31,7 @@ function route() {
 initDisplay();
 initKids();
 initDemos();
+initPlay();
 
 document.getElementById('skip').addEventListener('click', (event) => {
   event.preventDefault();

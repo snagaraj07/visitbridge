@@ -7,6 +7,7 @@ import { ACTIVITIES, TOP_ACTIVITIES, activity } from './activities.js';
 import { LANGUAGES, TOP_LANGUAGES, AI_VOICE, language } from './languages.js';
 import { FEARS } from './fears.js';
 import { initVoicePicker, forgetVoice } from './voice.js';
+import { forgetPlay } from './play.js';
 
 const KID_KEY = 'vb-kid';
 
@@ -125,9 +126,10 @@ function initKidForm() {
   });
 
   document.getElementById('kid-clear').addEventListener('click', async () => {
-    if (!confirm('Delete your child\'s details, saved stories, pictures, videos, and any recorded voice?')) return;
+    if (!confirm('Delete your child\'s details, saved stories, play log, pictures, videos, and any recorded voice?')) return;
     localStorage.removeItem(KID_KEY);
     localStorage.removeItem('vb-stories');
+    forgetPlay();
     deleteAllArt();
     await forgetVoice();
     fillKid(form, EMPTY);

@@ -1,6 +1,8 @@
 import { scrub } from './scrub.js';
 import { sampleStory } from './samples.js';
-import { PICTURE_KEYS, FRIEND_KEYS, FRIENDS, DEFAULT_FRIEND } from '../public/js/pictures.js';
+import { PICTURE_KEYS, FRIEND_KEYS, DEFAULT_FRIEND, friendFor } from '../public/js/pictures.js';
+
+export { friendFor };
 import { activity } from '../public/js/activities.js';
 import { LANGUAGES } from '../public/js/languages.js';
 import { FEAR_IDS, fear } from '../public/js/fears.js';
@@ -282,15 +284,6 @@ const SUPPORT_TEXT = {
   },
 };
 
-// The model sometimes picks an odd icon (a ladybug for lawn mowers), so a
-// plain name match wins when there is one.
-export function friendFor(theme) {
-  const one = (s) => s.toLowerCase().trim().replace(/(\w)s\b/g, '$1');
-  const want = one(theme);
-  return FRIEND_KEYS.find((key) => [key, ...FRIENDS[key].label.split(/ or |,/)]
-    .map(one).some((name) => name && (want.includes(name) || name.includes(want))));
-}
-
 function cap(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
@@ -352,7 +345,7 @@ export function addMissingSupports(pages, comfort, lang = 'en', favorite = '', {
   return pages;
 }
 
-async function runModel(env, system, user, schema) {
+export async function runModel(env, system, user, schema) {
   if (!env.AI || env.MOCK_AI === '1') return null;
 
   const messages = [
@@ -392,11 +385,11 @@ function listLine(label, items) {
   return list.length ? `${label}: ${list.join('; ')}` : '';
 }
 
-function str(value, max = 400) {
+export function str(value, max = 400) {
   return typeof value === 'string' ? value.trim().slice(0, max) : '';
 }
 
-function strs(value, max = 12) {
+export function strs(value, max = 12) {
   if (!Array.isArray(value)) return [];
   return value.map((v) => str(v)).filter(Boolean).slice(0, max);
 }

@@ -41,6 +41,15 @@ one by hand for each visit takes a parent hours.
 - **Honest about pain.** "A sharp poke. It hurts for 2 seconds." Never
   "it won't hurt" or "be brave".
 - **Demos** for the hardest visits play from saved files, with no AI calls.
+- **Play Coach (ages 1 to 5).** One 5-minute play game a day for the parent,
+  built around the child's favorite thing. Each game practices one skill from
+  parent-led play therapy with strong research (PACT, ESDM, JASPER, Hanen):
+  follow their lead, copy them, people games, wait, take turns, look
+  together, add one word. Three taps after playing pick tomorrow's game; a
+  hard day brings a gentler one. Progress shows small wins over weeks, and a
+  summary can be copied for the child's doctor. It also tells families how to
+  ask for a free early intervention evaluation. Text only, so it costs almost
+  nothing to run and stays free.
 
 ## Privacy and safety
 

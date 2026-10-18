@@ -2,10 +2,12 @@ import { writeStory, InputError } from './ai.js';
 import { drawPicture, speakText, cloneVoice, deleteVoice } from './media.js';
 import { startVideo, videoStatus, videoFile } from './video.js';
 import { sampleStory } from './samples.js';
+import { playIdea } from './play.js';
 
 // needs: which service the route uses, so a missing key turns off only that feature.
 const ROUTES = {
   '/api/story': { run: async (env, body) => json(await writeStory(env, body)) },
+  '/api/play': { run: playIdea },
   '/api/picture': { run: drawPicture, needs: 'ai' },
   '/api/voice': { run: speakText, needs: (env, body) => (body.voiceId ? 'clone' : 'ai') },
   '/api/voice/clone': { run: cloneVoice, needs: 'clone', form: true },

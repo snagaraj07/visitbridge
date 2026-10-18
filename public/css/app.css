@@ -386,6 +386,58 @@ html.contrast input[type="text"], html.contrast textarea, html.contrast select {
 .voice-rec audio { width: 100%; }
 .consent span { font-size: 0.92rem; line-height: 1.4; }
 
+/* Play Coach */
+#play-app { display: grid; gap: 1.4rem; max-width: 52rem; }
+.play-head { display: flex; align-items: center; gap: 1rem; }
+.play-head img { width: 4rem; height: 4rem; }
+.play-head h2 { margin: 0; }
+.play-head .eyebrow { margin: 0; }
+.play-head button { margin-left: auto; }
+.play-card { padding: 1.4rem 1.5rem; display: grid; gap: 0.9rem; background: var(--surface); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+.play-card > * { margin: 0; }
+.play-skill { padding: 0.7rem 1rem; border-radius: var(--radius); background: var(--accent-soft); font-weight: 800; }
+.play-skill span { font-weight: 400; }
+.play-title { font-size: 1.6rem; }
+.play-steps { padding-left: 1.4rem; display: grid; gap: 0.6rem; font-size: 1.15rem; font-weight: 600; }
+.play-steps li::marker { color: var(--accent); font-weight: 900; }
+.play-say { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.chip { padding: 0.2rem 0.75rem; border-radius: 999px; background: var(--surface-2); border: 2px solid var(--line); font-weight: 800; }
+.play-watch { padding: 0.7rem 1rem; border-radius: var(--radius); background: var(--note-soft); }
+.play-clock { margin: 0; font-size: 2.2rem; font-weight: 900; font-variant-numeric: tabular-nums; color: var(--accent); }
+.play-card form h3 { margin: 0; }
+.play-progress { display: grid; gap: 1rem; }
+.play-progress h2 { margin: 0; }
+.play-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 0.8rem; }
+.play-stats .stat { padding: 1rem; display: grid; gap: 0.2rem; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); }
+.play-stats strong { font-size: 1.8rem; color: var(--accent); }
+.play-stats span { color: var(--muted); font-size: 0.92rem; }
+.play-days { display: grid; grid-template-columns: repeat(14, minmax(0, 1fr)); gap: 0.3rem; }
+.play-days .day { display: grid; justify-items: center; gap: 0.2rem; font-size: 0.75rem; color: var(--muted); }
+.play-days i { width: 100%; aspect-ratio: 1; border-radius: 8px; background: var(--surface-2); border: 2px solid var(--line); }
+.play-days .played i { background: var(--accent-soft); border-color: var(--accent); }
+.play-days .good i { background: var(--mint); border-color: var(--mint); }
+.play-ladder { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
+.play-ladder li { display: flex; align-items: center; gap: 0.7rem; padding: 0.55rem 0.9rem; border-radius: 14px; background: var(--surface); border: 2px solid var(--line); }
+.play-ladder li.now { border-color: var(--accent); }
+.play-ladder li.done { background: color-mix(in srgb, var(--mint) 14%, var(--surface)); border-color: var(--mint); }
+.play-ladder b { font-size: 1.3rem; }
+.play-ladder .stars { margin-left: auto; color: var(--sun); letter-spacing: 0.1em; }
+.play-summary { white-space: pre-wrap; padding: 1rem; background: var(--surface-2); border-radius: var(--radius); }
+.play-goal { padding: 0.6rem 1rem; border-radius: var(--radius); background: color-mix(in srgb, var(--mint) 14%, var(--surface)); }
+.play-proof summary { cursor: pointer; font-weight: 800; color: var(--accent); }
+.play-proof[open] summary { margin-bottom: 0.6rem; }
+.research { padding: 1.2rem 1.4rem; display: grid; gap: 0.7rem; border-radius: var(--radius-lg); background: linear-gradient(135deg, rgba(79, 70, 229, 0.08), rgba(46, 196, 182, 0.1)); border: 1px solid var(--line); }
+.research:empty { display: none; }
+.research > * { margin: 0; }
+.research summary { cursor: pointer; font-weight: 800; color: var(--accent); }
+.research-path { margin: 0; padding-left: 1.4rem; display: grid; gap: 0.25rem; font-weight: 700; }
+.research-list { margin: 0.6rem 0 0; padding-left: 1.1rem; display: grid; gap: 0.8rem; }
+.research-list li { display: grid; gap: 0.15rem; }
+.research-meta { font-size: 0.85rem; font-weight: 800; color: var(--accent); }
+.play-help { padding: 1.2rem 1.4rem; border-radius: var(--radius-lg); background: linear-gradient(135deg, rgba(46, 196, 182, 0.12), rgba(79, 70, 229, 0.08)); border: 1px solid var(--line); }
+.play-help h2 { margin-top: 0; font-size: 1.2rem; }
+.play-help p:last-child { margin-bottom: 0; }
+
 /* Demo stories */
 .demos { margin: 0 0 1.6rem; scroll-margin-top: 8rem; }
 .demos h2 { margin: 0 0 0.2rem; }

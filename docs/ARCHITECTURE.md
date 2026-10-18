@@ -29,6 +29,18 @@ receives one request, calls one model, and returns the result.
 5. On request, a page becomes a short video (`POST /api/video`, then
    `/api/video/status` and `/api/video/file`). Clips are saved in IndexedDB.
 
+## Play Coach
+
+1. `public/js/games.js` holds the tested game library and `nextGame()`, which
+   picks today's skill from the play log: each skill needs 3 good days before
+   the next opens, and a hard day repeats the skill gently.
+2. The browser sends `POST /api/play` with the game id, age group, talk level,
+   favorite thing and language. Never the name or the log.
+3. `src/play.js` asks Llama to rewrite the game around the favorite thing, with
+   toddler safety rules. If the answer is missing or choppy, the tested steps
+   are used.
+4. The check-in and progress live in localStorage (`vb-play`).
+
 ## Files
 
 | Path | Role |
@@ -38,6 +50,9 @@ receives one request, calls one model, and returns the result.
 | `src/media.js` | Pictures and voice |
 | `src/video.js` | Video jobs on fal.ai |
 | `src/scrub.js` | Removes personal details from text |
+| `src/play.js` | Play Coach: themes the day's game |
+| `public/js/games.js` | Play Coach game library and daily pick |
+| `public/js/play.js` | Play Coach page, check-in and progress |
 | `public/js/player.js` | Full-screen player, read-along, slow mode |
 | `public/js/kids.js` | Child profile (stored in the browser) |
 | `public/js/demos.js` | Ready-made demos from `public/demo/` |
