@@ -6,7 +6,7 @@
   "lang": "en",
   "friend": {
     "key": "tractor",
-    "name": "Mo the Mower",
+    "name": "Mozy the Mower",
     "look": "a cute green toy lawn mower with big friendly eyes and a yellow handle",
     "theme": "Lawn mowers"
   },
@@ -42,9 +42,9 @@
   ],
   "pages": [
     {
-      "text": "I go to the barber. I see big chairs!",
-      "say": "Ooooh! Look, Leo! The barber shop. We go inside. What do you see?",
-      "scene": "A child and their grown-up walking into a barber shop with a friendly barber waving at them.",
+      "text": "I go to the barber shop. I see big chairs!",
+      "say": "Hmm... hello, Leo! It's me, Mozy the Mower! [excited] Today... the barber! You and me. Here we go!",
+      "scene": "A child and their grown-up, a mom with shoulder-length dark hair in a mustard sweater, walk into a small barber shop with red leather chairs, warm wood walls, and a big round mirror. The child looks curious.",
       "picture": "shop",
       "sound": "",
       "media": {
@@ -55,8 +55,8 @@
     },
     {
       "text": "I wait for my turn. I sit with my blue blanket.",
-      "say": "Ahhh! What is that? A waiting chair. You can sit and wait. I wait too. [giggles]",
-      "scene": "A child sitting in a waiting area with their blue blanket, and a toy lawn mower friend sitting next to them.",
+      "say": "Ooooh! Look, Leo! The waiting chairs. The waiting chairs! Can you sit with me?",
+      "scene": "The child sits in a waiting chair with their blue blanket, and the mom sits beside them. Mozy the Mower sits on the child's lap.",
       "picture": "wait",
       "sound": "",
       "media": {
@@ -78,9 +78,9 @@
       }
     },
     {
-      "text": "I sit in the big chair. It goes up high!",
-      "say": "Oh my! Look! The big chair. The big chair! It goes up... up... up! Can you see it?",
-      "scene": "A child sitting in a barber chair with a toy lawn mower friend beside them, both looking up at the ceiling.",
+      "text": "I sit in the big chair. It feels like a big ride!",
+      "say": "Ahhh! What is that? The big chair. The big blue chair! It goes up... up... up! Can you say up?",
+      "scene": "The child sits in the big barber chair, and it starts to rise. Mozy the Mower is beside them, also rising.",
       "picture": "chair",
       "sound": "",
       "media": {
@@ -90,10 +90,10 @@
       }
     },
     {
-      "text": "A cape goes on me. It keeps me clean.",
-      "say": "Hmm... what do I see? A cape! It goes around you. Like a big hug. Can you feel it?",
-      "scene": "A barber putting a cape around a child, with a toy lawn mower friend watching and wearing a tiny cape.",
-      "picture": "friend",
+      "text": "A cape goes on my neck. It's like a superhero cape!",
+      "say": "Oh my! Look! The cape. The cape! It keeps my clothes clean. Can you see it?",
+      "scene": "The barber puts a cape around the child's neck. Mozy the Mower has a tiny cape on too.",
+      "picture": "room",
       "sound": "",
       "media": {
         "image": "p5.jpg",
@@ -102,11 +102,11 @@
       }
     },
     {
-      "text": "Water sprays my hair. It feels cool!",
-      "say": "Psst... look over here! Water spray. It's like a little shower. Can you feel it?",
-      "scene": "A barber spraying water on a child's hair, with a toy lawn mower friend beside them getting sprayed with a tiny water spray.",
-      "picture": "wash",
-      "sound": "Splash!",
+      "text": "I hear the water spray. It feels cool on my hair!",
+      "say": "Hmm... what do I hear? The water spray. The water spray! It's like a tiny lawn mower sprinkler. Can you hear it?",
+      "scene": "The barber sprays water on the child's hair. Mozy the Mower makes a sprinkling motion with its blades.",
+      "picture": "shower",
+      "sound": "Whoosh!",
       "media": {
         "image": "p6.jpg",
         "voice": "p6.mp3",
@@ -114,11 +114,11 @@
       }
     },
     {
-      "text": "I hear the clippers. They buzz loud!",
-      "say": "Ooooh! Look, Leo! Clippers. They buzz loud. Like a big lawn mower! Can you hear it? Let's cover our ears and count to 5.",
-      "scene": "A child covering their ears and a toy lawn mower friend covering its ears, with a barber holding clippers in the background.",
-      "picture": "loud",
-      "sound": "Bzzzz",
+      "text": "I hear the scissors snip. They sound like clipping flowers!",
+      "say": "Psst... look over here! The scissors. The scissors! They cut my hair. Can you say snip?",
+      "scene": "The barber cuts the child's hair with scissors. Mozy the Mower has scissors too, and is cutting some grass.",
+      "picture": "haircut",
+      "sound": "Snip!",
       "media": {
         "image": "p7.jpg",
         "voice": "p7.mp3",
@@ -126,11 +126,11 @@
       }
     },
     {
-      "text": "The clippers touch my hair. They tickle my neck.",
-      "say": "Hmm... what do I feel? The clippers. They touch your hair. Like a little tickle. Can you feel it? I'm right here.",
-      "scene": "A barber using clippers on a child's hair, with a toy lawn mower friend watching and looking concerned.",
-      "picture": "haircut",
-      "sound": "Bzzzz",
+      "text": "The clippers buzz near my ears. It feels like a tickle!",
+      "say": "Ooooh! Look, Leo! The clippers. The clippers! They buzz like a lawn mower. Can you cover your ears and count to 5?",
+      "scene": "The barber uses clippers near the child's ears. Mozy the Mower is making a buzzing sound, and the child is covering their ears.",
+      "picture": "loud",
+      "sound": "Bzzzz!",
       "media": {
         "image": "p8.jpg",
         "voice": "p8.mp3",
@@ -138,10 +138,10 @@
       }
     },
     {
-      "text": "Little hairs fall down. They feel itchy!",
-      "say": "Ahhh! What is that? Little hairs. They fall down. Like little pieces of grass. Can you see them?",
-      "scene": "A child feeling itchy from little hairs, with a toy lawn mower friend looking itchy and scratching itself.",
-      "picture": "friend",
+      "text": "Little hairs fall on my neck. They feel itchy!",
+      "say": "Ahhh! What's that? The little hairs. The little hairs! They fall like grass clippings. Can you feel them?",
+      "scene": "Little hairs fall on the child's neck. Mozy the Mower has some grass clippings on its blade.",
+      "picture": "haircut",
       "sound": "",
       "media": {
         "image": "p9.jpg",
@@ -150,10 +150,10 @@
       }
     },
     {
-      "text": "A soft brush wipes them off. It feels nice!",
-      "say": "Oh my! Look! A soft brush. It wipes the hairs away. Like a little sweep. Can you feel it?",
-      "scene": "A barber using a soft brush to wipe away little hairs from a child, with a toy lawn mower friend being swept with a tiny brush.",
-      "picture": "friend",
+      "text": "A soft brush wipes them off. It feels so soft!",
+      "say": "Oh my! Look! The brush. The brush! It's like a soft lawn mower brush. Can you feel it?",
+      "scene": "The barber wipes the little hairs off the child's neck with a soft brush. Mozy the Mower is being brushed too, with a tiny brush.",
+      "picture": "comfort",
       "sound": "",
       "media": {
         "image": "p10.jpg",
@@ -163,9 +163,9 @@
     },
     {
       "text": "I look in the mirror. I see my new haircut!",
-      "say": "Ooooh! Look, Leo! The mirror. You can see yourself. Like a big reflection. Can you see your new haircut?",
-      "scene": "A child looking in a mirror and seeing their new haircut, with a toy lawn mower friend looking in a tiny mirror and admiring itself.",
-      "picture": "friend",
+      "say": "Hmm... what do I see? The mirror. The mirror! It shows my new haircut. Can you see it?",
+      "scene": "The child looks in the mirror, and sees their new haircut. Mozy the Mower is looking in a tiny mirror too.",
+      "picture": "light",
       "sound": "",
       "media": {
         "image": "p11.jpg",
@@ -175,8 +175,8 @@
     },
     {
       "text": "All done! I get to go home!",
-      "say": "Hmm... what do I see? We're all done! You can go home now. Like a big finish. Can you say yay?",
-      "scene": "A child and their grown-up leaving the barber shop, with a toy lawn mower friend waving goodbye.",
+      "say": "Ooooh! Look, Leo! We're all done! The haircut. The haircut! It's like a fresh lawn. Can you smile?",
+      "scene": "The child smiles, and hugs their blue blanket. Mozy the Mower is smiling too, and the mom is smiling and hugging the child.",
       "picture": "home",
       "sound": "",
       "media": {
@@ -197,5 +197,10 @@
         "video": "p13.mp4"
       }
     }
-  ]
+  ],
+  "cast": {
+    "place": "a small barber shop with red leather chairs, warm wood walls, and a big round mirror",
+    "grownUp": "a mom with shoulder-length dark hair in a mustard sweater",
+    "seed": 4242
+  }
 }

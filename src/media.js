@@ -51,6 +51,11 @@ export async function drawPicture(env, body) {
   const scene = text(body.scene, 400);
   if (!scene) throw new InputError('Missing scene.');
   const friend = text(body.friendLook, 160);
+  // The same place, grown-up, clothes and seed on every page, so the pictures read as one film.
+  const place = text(body.place, 160);
+  const grownUp = text(body.grownUp, 120);
+  const seed = Number.isInteger(body.seed) && body.seed >= 0 ? body.seed : undefined;
+  const covered = PRIVATE.test(scene) || /\b(pajamas|bed|dress|swim)/i.test(scene);
 
   const style = STYLES[body.kid?.style] ?? STYLES.real;
   const kid = describeKid(body.kid);
@@ -58,13 +63,16 @@ export async function drawPicture(env, body) {
   const prompt = [
     style.look,
     placed,
+    place && !/\bhome\b/i.test(scene) && `The place: ${place}.`,
+    grownUp && /grown-?up|parent|mom|dad/i.test(scene) && `The grown-up is ${grownUp}.`,
+    !covered && 'The child wears a plain green t-shirt and blue jeans.',
     'The child is small, much shorter than the grown-ups, and is the main character. Grown-ups look like adults.',
     friend && style.friend(friend),
     PRIVATE.test(scene) && 'Close-up of the face and shoulders only, the child wrapped in a big fluffy towel or under thick bubbles. Nothing below the shoulders is visible.',
     SAFE,
   ].filter(Boolean).join(' ');
 
-  const res = await env.AI.run(IMAGE_MODEL, { prompt, width: 1024, height: 768 });
+  const res = await env.AI.run(IMAGE_MODEL, { prompt, width: 1024, height: 768, ...(seed !== undefined && { seed }) });
   const image = res?.image;
   if (!image) throw new Error('No image returned');
   return new Response(base64ToBytes(image), {

@@ -71,6 +71,7 @@ Each page has:
 - "sound": a short sound word for something the child will really hear, like "Beep!", "Bzzzz", "Click!", "Slurp!", or "". It is a sound a machine or tool makes, never the child's voice ("Ow!"). Never invent sounds. Do not repeat it in the text.
 - "say": what the story friend says out loud on this page. See the friend rules below.
 - "scene": a description of this page's picture for an illustrator, 1 or 2 sentences. Show exactly what the page says: who is there, where they are, what they are doing, and their faces. Example: "A smiling receptionist behind a bright clinic front desk greets the child and their grown-up." Include the child and the friend in most scenes. The friend joins in and copies what the child does, right next to them: "The child sits in the dentist chair with their mouth open wide, and the toy lawn mower friend beside them opens its mouth wide too." Never use the child's name. No words, letters, or signs. Keep medical moments gentle: no blood, never a needle touching skin. For a shot, show the nurse gently holding the child's arm while the child holds their grown-up's hand. The child is always covered: for bath or shower pages show only the head and shoulders above lots of bubbles, or the child wrapped in a towel; for toilet pages show the child washing hands at the sink or the closed bathroom door; for dressing pages the child is in pajamas or underclothes like a full undershirt.
+  Every scene shows the one thing the page talks about, so the child can see it: for "the chair goes up", the child in the barber chair rising; for "little hairs fall", small hairs on the cape. Scenes happen in "place", in order, except pages that are clearly at home.
 - "picture": the picture that matches the main thing on the page. Must be one of: ${PICTURE_KEYS.join(', ')}, or "friend" for pages that are mostly about the friend.
 
 Example pages from a different visit:
@@ -89,6 +90,8 @@ Rules:
 - The last page is a happy finish with the favorite thing: ${KINDS[kind].ending}
 - Up to 4 exclamation marks in all the "text" and "fun" lines.
 - Use literal words. No idioms. Never use the words "pinch", "quick", "brave", or "good boy" or "good girl".
+- "place": the one real place this happens, for the illustrator, under 20 words, with colors and a few objects, so every picture shows the same room. Example: "a small barber shop with red leather chairs, warm wood walls, and a big round mirror". In English.
+- "grownUp": how the child's grown-up looks, under 15 words, so they look the same in every picture. Example: "a mom with shoulder-length dark hair in a mustard sweater". In English.
 - "title": short and fun, using the word NAME where the child's name goes, like "NAME's dentist adventure". Do not use NAME anywhere else.
 - Return only JSON that matches the schema.`;
 
@@ -157,7 +160,9 @@ function storySchema(theme, translate) {
     required: ['title', 'pages'],
   };
   schema.properties.friendLook = { type: 'string' };
-  schema.required.push('friendLook');
+  schema.properties.place = { type: 'string' };
+  schema.properties.grownUp = { type: 'string' };
+  schema.required.push('friendLook', 'place', 'grownUp');
   if (theme) {
     schema.properties.helper = { type: 'string' };
     schema.properties.friend = { type: 'string', enum: FRIEND_KEYS };
@@ -240,6 +245,11 @@ export async function writeStory(env, body) {
           theme,
         }
       : { ...DEFAULT_FRIEND },
+    cast: {
+      place: str(raw.place, 160),
+      grownUp: str(raw.grownUp, 120),
+      seed: Math.floor(Math.random() * 2 ** 31),
+    },
     plan: fearPlan([...picked, ...(fearText ? strs(raw.fears, 3) : [])]),
     removed: details.removed,
   };
@@ -306,10 +316,10 @@ function translatedSupports(raw) {
 }
 
 const SCENES = {
-  comfort: (item, kind) => `The child happily holds their ${item} close in a calm ${kind === 'visit' ? 'clinic waiting room' : 'cozy room at home'}, with the friend beside them hugging something too.`,
+  comfort: (item, kind) => `The child happily holds their ${item} close in a calm ${kind === 'visit' ? 'waiting area' : 'cozy room at home'}, with the friend beside them hugging something too.`,
   feelings: 'The child sits close to their grown-up, who gives a gentle hug. The friend snuggles in too. Calm, soft light.',
   done: (kind) => kind === 'visit'
-    ? 'The child and their grown-up walk out of the clinic door, smiling, with the friend.'
+    ? 'The child and their grown-up walk out the front door, smiling, with the friend.'
     : 'The child smiles and gives their grown-up a high five, and the friend cheers with its arms up.',
   favorite: (thing) => `The child plays happily with ${thing} at home, with the friend playing too.`,
 };

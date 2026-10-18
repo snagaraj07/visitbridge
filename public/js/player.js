@@ -45,6 +45,7 @@ export function playStory(story, { title, kid, lang = 'en' }) {
   let frame = 0;
   let audioCtx = null;
   let analyser = null;
+  let clipEl = null;
   const voices = new Map();
   const audio = new Audio();
   audio.preload = 'auto';
@@ -54,6 +55,7 @@ export function playStory(story, { title, kid, lang = 'en' }) {
     pace = to;
     audio.defaultPlaybackRate = pace;
     audio.playbackRate = pace;
+    fitClip();
     slowBtn.classList.toggle('on', pace < 1);
     slowBtn.setAttribute('aria-pressed', String(pace < 1));
   };
@@ -161,6 +163,7 @@ export function playStory(story, { title, kid, lang = 'en' }) {
     if (clip) return playClip(clip, url);
     if (url) return paint(url);
 
+    clipEl = null;
     art.replaceChildren(
       el('div', { class: `pl-fallback scene-${fallback.scene}` },
         el('img', { src: page.picture === 'friend' ? friend.img : fallback.img, alt: '' }),
@@ -177,17 +180,35 @@ export function playStory(story, { title, kid, lang = 'en' }) {
     }
   };
 
+  // The new page fades in over the old one, like a film, instead of a hard cut.
+  const swap = (node) => {
+    const old = [...art.children];
+    art.append(node);
+    setTimeout(() => old.forEach((n) => n.remove()), 900);
+  };
+
+  // A clip is about 5 seconds and the page talks for longer. Playing it once, slowed to
+  // fill the talking, then resting on the last frame looks real; looping jumps back.
   const playClip = (clip, poster) => {
-    const video = el('video', { class: 'pl-video', src: clip, poster: poster || null, muted: true, loop: true, playsinline: true, autoplay: true });
+    const video = el('video', { class: `pl-video kb-${index % 4}`, src: clip, poster: poster || null, muted: true, playsinline: true, autoplay: true, onloadedmetadata: () => fitClip() });
     video.muted = true;
-    art.replaceChildren(video);
+    clipEl = video;
+    swap(video);
     video.play().catch(() => {});
+    fitClip();
     bg.style.backgroundImage = poster ? `url("${poster}")` : '';
   };
 
+  function fitClip() {
+    if (!clipEl || !clipEl.duration || !audio.duration) return;
+    const talking = audio.duration / pace + PAUSE_BETWEEN_PAGES / pace / 1000;
+    clipEl.playbackRate = Math.min(1, Math.max(0.7, clipEl.duration / talking));
+  }
+
   const paint = (url) => {
+    clipEl = null;
     const img = el('img', { class: `pl-img kb-${index % 4}`, src: url, alt: '' });
-    art.replaceChildren(img);
+    swap(img);
     bg.style.backgroundImage = `url("${url}")`;
   };
 
@@ -305,6 +326,7 @@ export function playStory(story, { title, kid, lang = 'en' }) {
     tick();
   }
 
+  audio.addEventListener('loadedmetadata', fitClip);
   audio.addEventListener('ended', () => {
     cancelAnimationFrame(frame);
     afterPage(index);

@@ -161,6 +161,7 @@ async function fetchArt(story, index, kid) {
     body: JSON.stringify({
       scene: story.pages[index].scene,
       friendLook: story.friend?.look,
+      ...story.cast,
       kid: { ...kid.look, age: kid.age },
     }),
   });

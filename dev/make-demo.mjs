@@ -85,6 +85,7 @@ async function makeDemo(demo) {
       age: KID.age,
       lang: 'en',
       friend: raw.friend,
+      cast: raw.cast,
       plan: raw.plan,
       pages: raw.pages.map((p) => ({ ...p, say: fill(p.say) })),
     };
@@ -97,7 +98,7 @@ async function makeDemo(demo) {
   await inBatches(story.pages, 3, async (page, i) => {
     const out = join(dir, page.media.image);
     if (await exists(out) || !page.scene) return;
-    const res = await send('/api/picture', { scene: page.scene, friendLook: story.friend?.look, kid: { ...KID.look, age: KID.age } });
+    const res = await send('/api/picture', { scene: page.scene, friendLook: story.friend?.look, ...story.cast, kid: { ...KID.look, age: KID.age } });
     await writeFile(out, Buffer.from(await res.arrayBuffer()));
     console.log(`  picture ${i + 1}/${story.pages.length}`);
   });
