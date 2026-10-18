@@ -59,6 +59,7 @@ receives one request, calls one model, and returns the result.
 | `public/_headers` | Security headers for every page |
 | `dev/server.js` | Local server that runs the same Worker code |
 | `dev/make-demo.mjs` | Builds the demo stories and compresses the videos |
+| `dev/make-video.mjs` | Builds the narrated YouTube demo video from app screenshots and the haircut demo |
 
 ## Configuration
 
